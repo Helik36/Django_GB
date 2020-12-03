@@ -14,13 +14,7 @@ def main(request):
 
 def products(request, pk=None):
     print(pk)
-    links_menu = [
-        {'href': 'mainapp:products_all', 'name': 'все'},
-        {'href': 'mainapp:products_home', 'name': 'дом'},
-        {'href': 'mainapp:products_office', 'name': 'офис'},
-        {'href': 'mainapp:products_modern', 'name': 'модерн'},
-        {'href': 'mainapp:products_classic', 'name': 'классика'},
-    ]
+    links_menu = Product.objects.all()
     content = {
         'title': "Продукты",
         'links_menu': links_menu
