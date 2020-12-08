@@ -9,7 +9,12 @@ from mainapp.models import ProductCategory, Product
 
 from authapp.models import ShopUser
 
+from mainapp.models import Location
+
 JSON_PATH = os.path.join(settings.BASE_DIR, 'mainapp/json')
+json_data = json.loads(open('mainapp/json/contact__locations.json', encoding='utf-8').read())
+
+
 
 def load_json_data(file_name):
     with open(os.path.join(JSON_PATH, file_name + '.json'), encoding='UTF-8') as json_file:
@@ -31,5 +36,6 @@ class Command(BaseCommand):
             _category = ProductCategory.objects.get(name=category_name)
             product['category'] = _category
             Product.objects.create(**product)
+
 
         ShopUser.objects.create_superuser('django', 'django@geekbrains.local', 'geekbrains', age=22)

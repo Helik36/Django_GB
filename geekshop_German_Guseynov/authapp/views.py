@@ -8,10 +8,11 @@ from django.urls import reverse
 
 
 def login(request):
-    login_form = ShopUserLoginForm(data=request.POST)
-    if request.method == 'POST' and login_form.is_valid():
+    login_form = ShopUserLoginForm(data=request.POST) # формирование форма авторизация
+    if request.method == 'POST' and login_form.is_valid(): # Проверка валидности формы
         username = request.POST.get('username')
         password = request.POST['password']
+
         user = auth.authenticate(username=username, password=password)
         if user and user.is_active:
             auth.login(request, user)
