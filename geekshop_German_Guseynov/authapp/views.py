@@ -35,7 +35,8 @@ def register(request):
             register_form.save()
             return HttpResponseRedirect(reverse('authapp:login'))
     else:
-         register_form = ShopUserLoginForm()
+        register_form = ShopUserRegisterForm()
+
     content = {'register_form': register_form}
     return render(request, 'authapp/register.html', content)
 

@@ -45,6 +45,20 @@ def delete(request, pk):
 
 
 @login_required
+def basket_remove_ajax(request, pk):
+    if request.is_ajax():
+        basket_for_delete = Basket.objects.get(pk=pk)
+        basket_for_delete.delete()
+
+        basket_items = Basket.objects.filter(user=request.user).order_by('product__catrgory')
+
+        content = {
+            'basket_items': basket_items
+        }
+        result = render_to_string('basketapp/inlcudes/inc_basket_list.html', content)
+        return JsonResponse({'result': result})
+
+@login_required
 def basket_edit(request, pk, quantity):
     if request.if_ajax():
         quantity = int(quantity)
