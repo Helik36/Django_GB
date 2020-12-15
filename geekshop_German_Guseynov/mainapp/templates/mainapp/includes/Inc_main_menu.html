@@ -11,8 +11,16 @@
             контакты
         </a>
     </li>
+
     {% if user.is_authenticated %}
         <li><a href="{% url 'auth:edit' %}">{% if user.first_name %} {{user.first_name }} {% else %} пользователь {% endif %}</a></li>
+    {% endif %}
+
+    {% if user.is_superuser %}
+            <li><a href="{% url 'admin:users' %}"> админка </a></li>
+    {% endif %}
+
+    {% if user.is_authenticated %}
         <li><a href="{% url 'auth:logout' %}">выход</a></li>
     {% else %}
         <li><a href="{% url 'auth:login' %}">вход</a>
@@ -22,6 +30,6 @@
     <a href="#" class="search"></a>
 <a href="{% url 'basket:view' %}" class="basket">
     <span>
-        {% if basket %} {{ basket|length }} {% endif %}
+        {% if basket %} {{ basket.0.total_cost|floatformat:0 }} рублей ({{ basket.0.total_quantity }} шт.) {% endif %}
     </span>
 </a>
