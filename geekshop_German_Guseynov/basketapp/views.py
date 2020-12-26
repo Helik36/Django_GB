@@ -37,30 +37,30 @@ def add(request, pk):
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER')) # возвращается на тот же адрес, от куда пришёл
 
-@login_required
-def delete(request, pk):
-    basket_item = get_object_or_404(Basket, pk=pk)
-    basket_item.delete()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+# @login_required
+# def delete(request, pk):
+#     basket_item = get_object_or_404(Basket, pk=pk)
+#     basket_item.delete()
+#     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
 @login_required
 def basket_remove_ajax(request, pk):
     if request.is_ajax():
-        basket_for_delete = Basket.objects.get(pk=pk)
-        basket_for_delete.delete()
-
-        basket_items = Basket.objects.filter(user=request.user).order_by('product__catrgory')
-
+        basket_item = get_object_or_404(Basket, pk=pk)
+        basket_item.delete()
+        basket_items = Basket.objects.filter(user=request.user).order_by('product__category')
         content = {
             'basket_items': basket_items
         }
-        result = render_to_string('basketapp/inlcudes/inc_basket_list.html', content)
+
+        result = render_to_string('basketapp/includes/inc_basket_list.html', content)
+
         return JsonResponse({'result': result})
 
 @login_required
 def basket_edit(request, pk, quantity):
-    if request.if_ajax():
+    if request.is_ajax():
         quantity = int(quantity)
         new_basket_item = Basket.objects.get(pk=pk)
 
@@ -77,6 +77,5 @@ def basket_edit(request, pk, quantity):
         }
 
         result = render_to_string('basketapp/includes/inc_basket_list.html', content)
-        print(result)
 
-        return JsonResponse({'reulst': result})
+        return JsonResponse({'result': result})

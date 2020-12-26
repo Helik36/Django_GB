@@ -8,15 +8,9 @@
                 удалить
               {% else %}
                   восставновить
-              {% endif %} {{ object.username }}
-    {% if object.first_name %}
-      <b>({{ object.first_name|title }}</b>
-      {% if object.last_name %}
-        {{ object.last_name|title }}
-      {% endif %})
-    {% endif %}
+              {% endif %} {{ object.name }}
     ?
-    <form action="{% url 'admin:user_delete' object.pk %}"
+    <form action="{% url 'admin:category_delete' object.pk %}"
           method="post">
       {% csrf_token %}
       {% if object.is_active %}
@@ -27,7 +21,7 @@
 
     </form>
     <button class="btn btn-success">
-      <a href="{% url 'admin:users' %}">
+      <a href="{% url 'admin:categories' %}">
         Отмена
       </a>
     </button>
