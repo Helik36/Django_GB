@@ -10,8 +10,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -24,14 +24,19 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/media/products_images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mainapp/management/commands" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Learn\Desktop\brains\7Django\geekshop_German_Guseynov\mainapp\management\commands" />
       <recent name="C:\Users\Learn\Desktop\brains\7Django\geekshop_German_Guseynov\media\products_images" />
       <recent name="C:\Users\Learn\Desktop\brains\7Django\geekshop_German_Guseynov\adminapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Learn\Desktop\brains\7Django\geekshop_German_Guseynov\ordersapp\templates\ordersapp" />
+      <recent name="C:\Users\Learn\Desktop\brains\7Django\geekshop_German_Guseynov\ordersapp\templates\ordersapp\includes" />
+      <recent name="C:\Users\Learn\Desktop\brains\7Django\geekshop_German_Guseynov\ordersapp" />
+      <recent name="C:\Users\Learn\Desktop\brains\7Django\geekshop_German_Guseynov\ordersapp\templates" />
       <recent name="C:\Users\Learn\Desktop\brains\7Django\geekshop_German_Guseynov\basketapp\templates\basketapp" />
     </key>
   </component>
@@ -116,5 +121,24 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="469" y="224" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1608025552073" />
+    <state x="521" y="72" width="672" height="678" key="search.everywhere.popup" timestamp="1608988777423">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="521" y="72" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1608988777423" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ordersapp/urls.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ordersapp/models.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
