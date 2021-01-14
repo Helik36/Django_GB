@@ -13,6 +13,8 @@ import os, json
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import django
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -23,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#d3)3xv_4j4+8zppp=!cz2^tk(da1k9l3r!e4-d7qb0q*lq%3y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -83,10 +85,18 @@ WSGI_APPLICATION = 'geekshop_German_Guseynov.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': django.db.backends.postchic7uch7ij9gresql,
+        'NAME': 'geekshop',
+        'USER': 'postgres'
     }
 }
 
