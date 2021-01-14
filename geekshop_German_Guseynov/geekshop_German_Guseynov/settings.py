@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'geekshop_German_Guseynov.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': django.db.backends.postchic7uch7ij9gresql,
+        'ENGINE': 'django.db.backends.postresql',
         'NAME': 'geekshop',
         'USER': 'postgres'
     }
